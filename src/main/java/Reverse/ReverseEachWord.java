@@ -1,3 +1,5 @@
+package Reverse;
+
 import java.util.Scanner;
 
 //Reverse Each Word (Not Entire String)
