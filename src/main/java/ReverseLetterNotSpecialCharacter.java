@@ -10,11 +10,23 @@ public class ReverseLetterNotSpecialCharacter {
 
         String word = scanner.nextLine();
         StringBuilder builder = new StringBuilder("");
-        for(int i=0; i<=word.length()-1;i++)
-            if(Character.isLetterOrDigit(word.charAt(i))) {
-                builder = builder.append(word.charAt(i));
-            }
-        System.out.println(builder);
-    }
 
+        char[] arr = word.toCharArray();
+        int left = 0, right = word.length() - 1;
+
+        while (left < right)
+            if (!Character.isLetter(word.charAt(left)))
+                left++;
+            else if (!Character.isLetter(word.charAt(right)))
+                right--;
+            else {
+                char temp = arr[left];
+                arr[left] = arr[right];
+
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        System.out.println(new String(arr));
+    }
 }
