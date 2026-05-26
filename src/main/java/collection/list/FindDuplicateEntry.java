@@ -7,7 +7,8 @@ import java.util.Set;
 public class FindDuplicateEntry {
 
     public static void main(String[] args) {
-        String[] arr = {"Azhar", "Mazhar", "Jamal", "Azhar", "Jamal"};
+        //String[] arr = {"Azhar", "Mazhar", "Jamal", "Azhar", "Jamal"};
+        String[] arr = {"Azhar", "Azhar", "Jamal", "Jamal", "Jamal"};
         List<String> list = Arrays.asList(arr);
 
         int count =1;
@@ -15,17 +16,16 @@ public class FindDuplicateEntry {
 
         for (int i=0;i<list.size();i++)
         {
-            if(i + 1 < list.size() && list.get(i)== list.get(i+1))
+            if(i + 1 < list.size() && list.get(i).equals(list.get(i+1)))
                 {
                     stringBuilder.append(list.get(i)+count);
                     count++;
                 }
             else
             {
-
+                count = 1;
             }
         }
-
-
+        System.out.println(stringBuilder);
     }
 }
